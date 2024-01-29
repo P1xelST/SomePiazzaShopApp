@@ -6,7 +6,7 @@ import { Menu } from './pages/Menu/Menu';
 import { Cart } from './pages/Cart/Cart';
 import { Error } from './pages/Error/Error';
 import './index.css';
-import { Layout } from './layout/Menu/Menu';
+import { Layout } from './layout/Menu/Layout';
 
 const router = createBrowserRouter([
 	{

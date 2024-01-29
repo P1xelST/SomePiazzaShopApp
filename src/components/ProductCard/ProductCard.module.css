@@ -1,0 +1,79 @@
+.head {
+    position: relative;
+    min-height: 165px;
+    border-radius: 19px;
+}
+
+.card {
+    color: var(--text-color);
+    background: white;
+    border-radius: 19px;
+    box-shadow: 18.214px 18.214px 36.429px 0px rgba(211, 209, 216, 0.25); 
+    width: 320px;
+}
+
+.title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.descr {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.price {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--white);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rating {
+    position: absolute;
+    bottom: -11px;
+    left: 15px;
+    background: var(--white);
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    box-shadow: 0px 6.071px 24.286px 0px rgba(254, 114, 76, 0.20); 
+}
+
+.add-to-card {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary);
+    border-radius: 100%;
+    border: none;
+    width: 34px;
+    height: 34px;
+    transition: .5s all;
+    cursor: pointer;
+}
+
+.add-to-card:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.footer {
+    padding: 12px;
+}
