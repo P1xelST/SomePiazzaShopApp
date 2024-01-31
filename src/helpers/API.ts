@@ -1,0 +1,1 @@
+export const PREFIX:string = 'https://purpleschool.ru/pizza-api-demo';

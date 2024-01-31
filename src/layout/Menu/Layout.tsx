@@ -10,7 +10,7 @@ export function Layout() {
 			<div className={styles['user']}>
 				<img className={styles['avatar']} src="/avatar.png" alt="avatarOfUser" />
 				
-				<div className={styles['name']}>Сергей Трифонов</div>
+				<div className={styles['name']}>Parsefal</div>
 				<div className={styles['email']}>something@yandex.com</div>
 			</div>
 			<div className={styles['menu']}>
@@ -23,13 +23,15 @@ export function Layout() {
 					[styles.active]: isActive
 				})}>
 					<img className={styles['icon']} src="/cart-icon.svg" alt="cart-icon" />
-					Корзина</NavLink>
+					Корзинка</NavLink>
 			</div>
 			<img width='200' height='155' src="/ui-shigure-shigure-ui.gif"/>
-			<Button className={styles['exit']}>
-				<img src="/exitIcon.svg" alt="exitIcon" />
+			<div className={styles['btn-fixed']}>
+				<Button className={styles['exit']}>
+					<img src="/exitIcon.svg" alt="exitIcon" />
 				Выход
-			</Button>
+				</Button>
+			</div>
 		</div>
 		<div className={styles['content']}>
 			<Outlet/>

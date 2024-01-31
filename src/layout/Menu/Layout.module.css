@@ -4,6 +4,8 @@
 }
 
 .sidebar {
+    box-sizing: border-box;
+    max-width: 260px;
     padding: 30px;
     border-right: 1px solid var(--separator-color);
     display: flex;
@@ -68,6 +70,12 @@
 
 .active {
     color: var(--primary-hover-color);
+}
+
+.btn-fixed {
+    position: fixed;
+    bottom: 25px;
+    left: calc(260px / 4);
 }
 
 .exit {
