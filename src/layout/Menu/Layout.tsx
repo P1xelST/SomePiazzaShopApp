@@ -1,9 +1,15 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import styles from './Layout.module.css';
 import Button from '../../components/Button/Button';
 import cn from 'classnames';
 
 export function Layout() {
+	const navigate = useNavigate();
+	const logOut = () => {
+		localStorage.removeItem('jwt');
+		navigate('/auth/login');
+	};
+
 
 	return <div className={styles['layout']}>
 		<div className={styles['sidebar']}>
@@ -27,7 +33,7 @@ export function Layout() {
 			</div>
 			<img width='200' height='155' src="/ui-shigure-shigure-ui.gif"/>
 			<div className={styles['btn-fixed']}>
-				<Button className={styles['exit']}>
+				<Button className={styles['exit']} onClick={logOut}>
 					<img src="/exitIcon.svg" alt="exitIcon" />
 				Выход
 				</Button>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Headling from '../../components/Headling/Headling';
 import styles from './Login.module.css';
@@ -6,6 +6,7 @@ import Input from '../../components/Input/Input';
 import { FormEvent, useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import { PREFIX } from '../../helpers/API';
+import { LoginRespone } from '../../Interfaces/auth.nteraface';
 
 export type LoginForm = {
 	email: {
@@ -18,22 +19,25 @@ export type LoginForm = {
 
 export function Login() {
 	const [error, setError] = useState<string | null>('');
+	const navigate = useNavigate();
 
 	const submit = async (e:FormEvent) => {
 		e.preventDefault();
 		const target = e.target as typeof e.target & LoginForm;
 		const {email,password} = target;
-		console.log(email.value,password.value);
+
 		await sendLogin(email.value, password.value);
 	};
 
 	const sendLogin = async (email:string, password:string) => {
 		try {
-			const {data} = await axios.post(`${PREFIX}/auth/login`, {
+			const {data} = await axios.post<LoginRespone>(`${PREFIX}/auth/login`, {
 				email,
 				password
 			});
-			console.log(data);
+			// console.log(data);
+			localStorage.setItem('jwt', data.access_token);
+			navigate('/');
 		} catch(err) {
 			if(err instanceof AxiosError) {
 				console.error(err.message);
@@ -57,7 +61,7 @@ export function Login() {
 				<label htmlFor="password">Ваш password</label>
 				<Input name='password' type="password" id='password' placeholder='Пароль'/>
 			</div>
-			<Button appearence='big'>Вход</Button>
+			<Button appearence='big' >Вход</Button>
 		</form>
 		<div className={styles['links']}>
 			<div>Нет аакаунта?</div>
