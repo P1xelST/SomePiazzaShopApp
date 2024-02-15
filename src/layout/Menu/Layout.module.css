@@ -93,6 +93,7 @@
 }
 
 .cart-count {
+    color: #fff;
     background-color: var(--primary);
     border-radius: 50%;
     width: 30px;
